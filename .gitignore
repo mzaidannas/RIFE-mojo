@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# uv / venv
+.venv/
+uv.lock.tmp
+
+# Mojo / MAX build + cache
+.pixi/
+*.mojopkg
+.max_cache/
+
+# OS
+.DS_Store
+
+# Local outputs
+*.png
+!docs/**/*.png
+out/

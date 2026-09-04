@@ -1,0 +1,29 @@
+[project]
+name = "rife-mojo"
+version = "0.1.0"
+description = "RIFE v4.25 video frame interpolation on Modular MAX + Mojo custom kernels (Apple-Silicon GPU / CPU)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "modular>=26.6.0.dev2026081105",
+    "numpy>=2.4.0",
+    "pillow>=10.0.0",
+]
+
+# Only needed to run the kernel parity tests (compare the Mojo kernels against
+# torch's grid_sample / interpolate / conv_transpose). Not needed for inference.
+[dependency-groups]
+dev = [
+    "torch>=2.9.1",
+    "torchvision>=0.24.1",
+]
+
+[tool.uv]
+prerelease = "allow"
+
+[[tool.uv.index]]
+name = "modular-nightly"
+url = "https://whl.modular.com/nightly/simple/"
+
+[tool.uv.sources]
+modular = { index = "modular-nightly" }
